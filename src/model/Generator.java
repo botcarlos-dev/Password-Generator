@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 
 public class Generator {
-    Alphabet alphabet;
+    public Alphabet alphabet;
     public static Scanner keyboard;
 
     public Generator(Scanner scanner) {

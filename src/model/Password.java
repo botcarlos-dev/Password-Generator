@@ -67,13 +67,13 @@ public class Password {
     public String calculateScore() {
         int Score = this.PasswordStrength();
 
-        if (Score == 6) {
+        if (Score >= 6) {
             return "Very Strong";
         }
-        else if (Score == 4) {
+        else if (Score >= 4) {
             return "Strong";
         }
-        else if (Score == 3) {
+        else if (Score >= 3) {
             return "Moderate";
         }
         else {
