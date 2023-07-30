@@ -1,3 +1,5 @@
+package model;
+
 public class Alphabet {
 
     public static final String UPPER_CASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

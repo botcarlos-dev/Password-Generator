@@ -1,5 +1,6 @@
+package model;
+
 import java.util.Scanner;
-import java.util.Objects;
 
 
 public class Generator {
@@ -13,6 +14,8 @@ public class Generator {
     public Generator(boolean IncludeUpper, boolean IncludeLower, boolean IncludeNumbers, boolean IncludeSymbols) {
         alphabet = new Alphabet(IncludeUpper, IncludeLower, IncludeNumbers, IncludeSymbols);
     }
+
+
 
     public void mainLoop() {
         System.out.println("Welcome to the Password Generator!");
@@ -48,7 +51,7 @@ public class Generator {
         }
     }
 
-    private Password GeneratePassword(int length) {
+    public Password GeneratePassword(int length) {
         final StringBuilder pass = new StringBuilder("");
 
         final int alphabetLength = alphabet.getAlphabet().length();
@@ -65,18 +68,20 @@ public class Generator {
         return new Password(pass.toString());
     }
 
-    private void printUsefulInfo() {
-        System.out.println();
-        System.out.println("Use a minimum password length of 8 or more characters if permitted");
-        System.out.println("Include lowercase and uppercase alphabetic characters, numbers and symbols if permitted");
-        System.out.println("Generate passwords randomly where feasible");
-        System.out.println("Avoid using the same password twice (e.g., across multiple user accounts and/or software systems)");
-        System.out.println("Avoid character repetition, keyboard patterns, dictionary words, letter or number sequences," +
-                "\nusernames, relative or pet names, romantic links (current or past) " +
-                "and biographical information (e.g., ID numbers, ancestors' names or dates).");
-        System.out.println("Avoid using information that the user's colleagues and/or " +
-                "acquaintances might know to be associated with the user");
-        System.out.println("Do not use passwords which consist wholly of any simple combination of the aforementioned weak components");
+    public static String printUsefulInfo() {
+        String usefulInfo =
+        "Use a minimum password length of 8 or more characters if permitted\n" +
+        "Include lowercase and uppercase alphabetic characters, numbers and symbols if permitted\n" +
+        "Generate passwords randomly where feasible\n" +
+        "Avoid using the same password twice (e.g., across multiple user accounts and/or software systems)\n" +
+        "Avoid character repetition, keyboard patterns, dictionary words, letter or number sequences," +
+                "usernames, relative or pet names, romantic links (current or past) " +
+                "and biographical information (e.g., ID numbers, ancestors' names or dates).\n" +
+        "Avoid using information that the user's colleagues and/or " +
+                "acquaintances might know to be associated with the user\n" +
+        "Do not use passwords which consist wholly of any simple combination of the aforementioned weak components";
+
+        return usefulInfo;
     }
 
     private void requestPassword() {
@@ -175,7 +180,7 @@ public class Generator {
             System.out.println("Choice:");
         }
 
-        private void printQuitMessage() {
+        public static void printQuitMessage() {
             System.out.println();
             System.out.println("Thank you for using the Password Generator!");
         }
